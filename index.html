@@ -1,0 +1,495 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishaan Enterprises | Happy Chhath Puja</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #170b13;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 35px 18px;
+    background:
+    linear-gradient(rgba(30,8,13,.55),rgba(20,7,12,.9)),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.hero-content {
+    max-width: 900px;
+    animation: appear 2s ease;
+}
+
+.shop-name {
+    font-size: clamp(30px,6vw,58px);
+    color: #ffd27b;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-shadow: 0 0 25px #ff982f;
+}
+
+.shop-tag {
+    margin-top: 12px;
+    color: #ffe5bd;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.line {
+    width: 140px;
+    height: 2px;
+    background: #ffd27b;
+    margin: 25px auto;
+}
+
+.diya {
+    font-size: 43px;
+    margin: 20px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px,9vw,92px);
+    color: #ffd27b;
+    text-shadow: 0 0 30px #ff8b24;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px,5vw,43px);
+    margin-top: 12px;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: 25px auto;
+    color: #ffe8d0;
+    line-height: 2;
+    font-size: 15px;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 14px 30px;
+    border: 1px solid #ffd27b;
+    border-radius: 30px;
+    background: transparent;
+    color: #ffd27b;
+    cursor: pointer;
+    transition: .4s;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #ffd27b;
+    color: #24101a;
+    box-shadow: 0 0 25px #ffb13d;
+}
+
+.section {
+    padding: 75px 20px;
+    text-align: center;
+}
+
+.heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px,5vw,48px);
+    color: #ffd27b;
+    margin-bottom: 15px;
+}
+
+.subheading {
+    color: #dfc6b2;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.brand-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 22px;
+}
+
+.brand-card {
+    min-height: 190px;
+    padding: 25px 15px;
+    border: 1px solid rgba(255,210,123,.35);
+    border-radius: 18px;
+    background: linear-gradient(145deg,#39202b,#20111c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffd27b;
+    box-shadow: 0 10px 30px #ffae3030;
+}
+
+.logo-box {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 18px;
+}
+
+.logo-box img {
+    max-width: 100%;
+    max-height: 65px;
+    object-fit: contain;
+}
+
+.logo-name {
+    color: #30202a;
+    font-weight: 700;
+    font-size: 21px;
+}
+
+.brand-card h3 {
+    color: #ffe7c2;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.brand-card p {
+    color: #d7bba5;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.note {
+    max-width: 900px;
+    margin: auto;
+    padding: 45px 30px;
+    border: 1px solid #a87549;
+    border-radius: 22px;
+    background: linear-gradient(145deg,#3b2029,#20111b);
+    color: #f8e2cb;
+    line-height: 2.1;
+    font-size: 15px;
+}
+
+.note h2 {
+    color: #ffd27b;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px,5vw,42px);
+    margin-bottom: 20px;
+}
+
+.note-sign {
+    color: #ffd27b;
+    font-weight: 700;
+    font-size: 21px;
+    margin-top: 25px;
+    line-height: 1.8;
+}
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #0b060c;
+    color: #d7bca5;
+    font-size: 13px;
+    line-height: 2.2;
+}
+
+footer strong {
+    color: #ffd27b;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #ffe7ae;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes appear {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes flicker {
+    from {transform:scale(1); opacity:.75;}
+    to {transform:scale(1.15); opacity:1;}
+}
+
+@keyframes twinkle {
+    0%,100% {opacity:.15;}
+    50% {opacity:1;}
+}
+
+@media(max-width:600px) {
+    .shop-name {letter-spacing:3px;}
+    .section {padding:55px 16px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<!-- MAIN GREETING -->
+
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="shop-name">ISHAAN ENTERPRISES</div>
+
+        <div class="shop-tag">
+            ELECTRICALS • LIGHTING • QUALITY
+        </div>
+
+        <div class="line"></div>
+
+        <div class="diya">🪔 🙏 🪔</div>
+
+        <h1>शुभ छठ पूजा</h1>
+        <h2>HAPPY CHHATH PUJA</h2>
+
+        <p>
+            With immense joy and devotion, Ishaan Enterprises
+            wishes you and your family a very Happy Chhath Puja.
+            May the blessings of Chhathi Maiya and Lord Surya
+            illuminate your lives with happiness, peace and prosperity.
+        </p>
+
+        <button class="btn" onclick="showWish()">
+            OPEN OUR FESTIVE WISH ✨
+        </button>
+
+    </div>
+</section>
+
+<!-- BRAND LOGOS -->
+
+<section class="section">
+
+    <h2 class="heading">OUR ASSOCIATED BRANDS</h2>
+
+    <p class="subheading">
+        Quality names. Trusted choices. A brighter tomorrow.
+    </p>
+
+    <div class="brand-grid">
+
+        <div class="brand-card">
+            <div class="logo-box">
+                <img src="logos/legrand.png" alt="Legrand logo"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="logo-name" style="display:none">LEGRAND</span>
+            </div>
+            <h3>LEGRAND</h3>
+            <p>INNOVATION & EXCELLENCE</p>
+        </div>
+
+        <div class="brand-card">
+            <div class="logo-box">
+                <img src="logos/panasonic.png" alt="Panasonic logo"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="logo-name" style="display:none">Panasonic</span>
+            </div>
+            <h3>PANASONIC</h3>
+            <p>INNOVATION FOR LIFE</p>
+        </div>
+
+        <div class="brand-card">
+            <div class="logo-box">
+                <img src="logos/anchor.png" alt="Anchor logo"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="logo-name" style="display:none">ANCHOR</span>
+            </div>
+            <h3>ANCHOR</h3>
+            <p>TRUST & RELIABILITY</p>
+        </div>
+
+        <div class="brand-card">
+            <div class="logo-box">
+                <img src="logos/schneider.png" alt="Schneider Electric logo"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="logo-name" style="display:none">SCHNEIDER</span>
+            </div>
+            <h3>SCHNEIDER ELECTRIC</h3>
+            <p>ENERGY & TECHNOLOGY</p>
+        </div>
+
+        <div class="brand-card">
+            <div class="logo-box">
+                <img src="logos/wipro.png" alt="Wipro logo"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="logo-name" style="display:none">WIPRO</span>
+            </div>
+            <h3>WIPRO</h3>
+            <p>LIGHTING & INNOVATION</p>
+        </div>
+
+        <div class="brand-card">
+            <div class="logo-box">
+                <img src="logos/bajaj.png" alt="Bajaj Electricals logo"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="logo-name" style="display:none">BAJAJ</span>
+            </div>
+            <h3>BAJAJ ELECTRICALS</h3>
+            <p>QUALITY & TRUST</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PERSONAL FESTIVAL NOTE -->
+
+<section class="section">
+
+    <div class="note">
+
+        <div class="diya">🌅 🪔 🌅</div>
+
+        <h2>A Heartfelt Note from Ishaan Enterprises</h2>
+
+        On this beautiful and auspicious occasion of Chhath Puja,
+        we extend our warmest wishes and heartfelt gratitude
+        to everyone who has been a part of our journey.
+
+        <br><br>
+
+        May the sacred festival of Chhath bring new hope,
+        positivity and countless blessings into your lives.
+        May Lord Surya bless every family with good health,
+        strength and prosperity, and may Chhathi Maiya
+        fulfil your heartfelt wishes.
+
+        <br><br>
+
+        Just as the first rays of the rising Sun bring a new
+        beginning, may this festival open the doors to new
+        opportunities, success and happiness.
+
+        <br><br>
+
+        Thank you for your continued trust, support and
+        association with Ishaan Enterprises.
+
+        <br><br>
+
+        Wishing you and your loved ones a joyful,
+        peaceful and blessed Chhath Puja!
+
+        <div class="diya">🙏</div>
+
+        <h2>HAPPY CHHATH PUJA!</h2>
+
+        <div class="note-sign">
+            Warm Regards,<br>
+            ISHAAN ENTERPRISES
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>ISHAAN ENTERPRISES</strong>
+
+    <br>
+    Your Trusted Electrical Products Shop
+
+    <br><br>
+
+    <strong>OUR BRANDS</strong>
+
+    <br>
+    LEGRAND | PANASONIC | ANCHOR
+    <br>
+    SCHNEIDER ELECTRIC | WIPRO | BAJAJ ELECTRICALS
+
+    <br><br>
+
+    May Your Life Always Shine With Happiness!
+
+    <br>
+    <span style="color:#ffd27b">
+        Faith • Trust • Togetherness • Prosperity
+    </span>
+
+</footer>
+
+<script>
+
+// Floating festive stars
+const stars = document.getElementById("stars");
+
+for(let i = 0; i < 70; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    stars.appendChild(star);
+}
+
+// Festive surprise
+function showWish() {
+    alert(
+      "🪔 ISHAAN ENTERPRISES 🪔\n\n" +
+      "Wishes you and your family a very Happy Chhath Puja!\n\n" +
+      "May Chhathi Maiya and Lord Surya bless you with health, happiness, peace and prosperity. 🙏"
+    );
+}
+
+</script>
+<!-- CHHATH PUJA MUSIC PLAYER -->
+
+<audio id="chhathSong" loop preload="auto">
+    <source src="chhath-song.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+    🪔 PLAY CHHATH SONG
+</button>
+
+</body>
+</html>
